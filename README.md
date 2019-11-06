@@ -2,7 +2,7 @@
 
 > AKA: React zen mode
 
-React Native renderer for nothing. Inspired by the React Conf talk about building a [custom renderer for React](https://www.youtube.com/watch?v=CGpMlWVcHok). 
+A universal React renderer for absolutely nothing. Inspired by the React Conf talk about building a [custom renderer for React](https://www.youtube.com/watch?v=CGpMlWVcHok). 
 
 Conceptually the host environment is nothing.
 
