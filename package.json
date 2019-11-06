@@ -1,12 +1,37 @@
 {
   "name": "react-native-nothing",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "React Native for Absolutely Nothing",
+  "main": "build",
+  "repository": "evanbacon/react-native-nothing",
   "scripts": {
+    "build": "babel src --out-dir=build",
+    "prepare": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "files": [
+    "build",
+    "index.d.ts"
+  ],
+  "peerDependencies": {
+    "react": ">=16.8.0"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "auto-bind": "^3.0.0",
+    "react": "^16.11.0",
+    "react-reconciler": "^0.23.0",
+    "scheduler": "^0.17.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/plugin-transform-modules-commonjs": "^7.7.0",
+    "@babel/preset-react": "^7.0.0",
+    "import-jsx": "^3.0.0"
+  }
 }
