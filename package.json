@@ -1,9 +1,9 @@
 {
-  "name": "react-native-nothing",
-  "version": "1.0.1",
-  "description": "React Native for Absolutely Nothing",
+  "name": "react-nothing",
+  "version": "1.0.0",
+  "description": "React for Absolutely Nothing",
   "main": "build",
-  "repository": "evanbacon/react-native-nothing",
+  "repository": "evanbacon/react-nothing",
   "scripts": {
     "build": "babel src --out-dir=build",
     "prepare": "npm run build",

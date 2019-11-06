@@ -1,4 +1,4 @@
-# React Native for Absolutely Nothing
+# React for Absolutely Nothing
 
 > AKA: React zen mode
 
