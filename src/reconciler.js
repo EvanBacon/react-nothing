@@ -1,16 +1,10 @@
-import {
-	unstable_scheduleCallback as schedulePassiveEffects,
-	unstable_cancelCallback as cancelPassiveEffects
-} from 'scheduler';
 import ReactReconciler from 'react-reconciler';
 import {
-	createNode,
-	createTextNode,
-	appendChildNode,
-	insertBeforeNode,
-	removeChildNode,
-	setAttribute
-} from './dom';
+    unstable_cancelCallback as cancelPassiveEffects,
+    unstable_scheduleCallback as schedulePassiveEffects,
+} from 'scheduler';
+
+import { appendChildNode, createNode, createTextNode, insertBeforeNode, removeChildNode, setAttribute } from './dom';
 
 const NO_CONTEXT = true;
 

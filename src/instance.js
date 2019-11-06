@@ -7,15 +7,16 @@ import reconciler from './reconciler';
 export const instances = new WeakMap();
 
 export default class Instance {
+    isUnmounted = false;
+
     constructor(options) {
         autoBind(this);
 
         this.options = options;
 
         this.rootNode = dom.createNode('root');
-        this.rootNode.onRender = this.onRender;
 
-        this.isUnmounted = false;
+        this.rootNode.onRender = this.onRender;
 
         this.container = reconciler.createContainer(this.rootNode, false, false);
 
@@ -45,7 +46,7 @@ export default class Instance {
         this.isUnmounted = true;
 
         reconciler.updateContainer(null, this.container);
-        instances.delete(this.options.stdout);
+        instances.delete(this.options.id);
 
         if (error instanceof Error) {
             this.rejectExitPromise(error);

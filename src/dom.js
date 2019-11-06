@@ -1,4 +1,3 @@
-// Helper utilities implementing some common DOM methods to simplify reconciliation code
 export const createNode = tagName => ({
 	nodeName: tagName.toUpperCase(),
 	style: {},
@@ -17,7 +16,6 @@ export const appendChildNode = (node, childNode) => {
 	node.childNodes.push(childNode);
 };
 
-// Same as `appendChildNode`, but without removing child node from parent node
 export const appendStaticNode = (node, childNode) => {
 	node.childNodes.push(childNode);
 };

@@ -1,28 +1,18 @@
 import Instance, { instances } from './instance';
 
+let globalID = 0;
+
 export default (node, options = {}) => {
-	// Stream was passed instead of `options` object
-	if (typeof options.write === 'function') {
-		options = {
-			stdout: options,
-			stdin: process.stdin
-		};
-	}
 
-	options = {
-		stdout: process.stdout,
-		stdin: process.stdin,
-		debug: false,
-		exitOnCtrlC: true,
-		...options
-	};
-
+    if (!options.id) {
+        options.id = globalID++
+    }
 	let instance;
-	if (instances.has(options.stdout)) {
-		instance = instances.get(options.stdout);
+	if (instances.has(options.id)) {
+		instance = instances.get(options.id);
 	} else {
 		instance = new Instance(options);
-		instances.set(options.stdout, instance);
+		instances.set(options.id, instance);
 	}
 
 	instance.render(node);
@@ -31,6 +21,6 @@ export default (node, options = {}) => {
 		rerender: instance.render,
 		unmount: () => instance.unmount(),
 		waitUntilExit: instance.waitUntilExit,
-		cleanup: () => instances.delete(options.stdout)
+		cleanup: () => instances.delete(options.id)
 	};
 };

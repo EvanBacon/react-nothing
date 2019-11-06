@@ -16,9 +16,7 @@ const Counter = () => {
 	});
 
 	return (
-		<div>
-			{counter} tests passed
-		</div>
+		<div>{counter} times nothing happened</div>
 	);
 };
 
